@@ -70,7 +70,7 @@ BOARD_KERNEL_CMDLINE += \
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
@@ -96,7 +96,7 @@ BOARD_MKBOOTIMG_ARGS +=
 --dtbo_offset=0x04650000
 --dtb=$(DEVICE_PATH)/prebuilt/dtb.img
 --dtbo=$(DEVICE_PATH)/prebuilt/dtbo.img
---kernel=$(DEVICE_PATH)/prebuilt/kernel
+--kernel=$(DEVICE_PATH)/prebuilt/Image
 --cmdline=$(BOARD_KERNEL_CMDLINE)
 
 # Partitions# Partitions | size
