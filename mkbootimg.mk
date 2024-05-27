@@ -39,7 +39,7 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(AVBTOOL) $(recovery_ramdisk) $
 	  --partition_name recovery $(INTERNAL_AVB_RECOVERY_SIGNING_ARGS) \
 	  $(BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS)
 	@echo "Made recovery image: $@"
-        $(hide) tar -C $(PRODUCT_OUT) -c recovery.img > $(FLASH_IMAGE_TARGET)
+    $(hide) tar -C $(PRODUCT_OUT) -c recovery.img > $(FLASH_IMAGE_TARGET)
 
 	@echo "Made flashable $(FLASH_IMAGE_TARGET): $@"
 
