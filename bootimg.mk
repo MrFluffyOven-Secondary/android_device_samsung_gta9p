@@ -27,5 +27,4 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(recovery_ramdisk) $(recovery_k
 	  $(BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS)
 	@echo "Made recovery image: $@"
 	$(hide) tar -C $(PRODUCT_OUT) -c recovery.img > $(FLASH_IMAGE_TARGET)
-
 	@echo "Made flashable $(FLASH_IMAGE_TARGET): $@"
