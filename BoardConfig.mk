@@ -82,7 +82,7 @@ TARGET_KERNEL_CONFIG := gta9p_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/gta9p
 
 # Bootimg
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/bootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_MKBOOTIMG_ARGS += 
 --board=SRPWD25B001
