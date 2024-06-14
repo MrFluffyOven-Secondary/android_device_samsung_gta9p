@@ -80,23 +80,15 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_CONFIG := gta9p_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/gta9p
 
-# Bootimg
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
-BOARD_CUSTOM_BOOTIMG := true
-BOARD_MKBOOTIMG_ARGS += 
---board=SRPWD25B002
---header_version=2
---kernel_base=0x00000000
---page_size=4096 
---ramdisk_offset=0x02000000
---tags_offset=0x01e00000
---dtb_offset=0x01f00000
---kernel_offset=0x00008000
---dtbo_offset=0x032ea000
---dtb=$(DEVICE_PATH)/prebuilts/dtb.img
---dtbo=$(DEVICE_PATH)/prebuilts/dtbo.img
---kernel=$(DEVICE_PATH)/prebuilts/Image
---cmdline=$(BOARD_KERNEL_CMDLINE)
+BOARD_MKBOOTIMG_ARGS := \
+--board=SRPWD25B002 \
+--header_version=2 \
+--kernel_base=0x00000000 \
+--dtb_offset=0x01f00000 \
+--kernel_offset=0x00008000 \
+--ramdisk_offset=0x02000000 \
+--tags_offset=0x01e00000 \
+--dtb $(TARGET_PREBUILT_DTB)
 
 # Partitions# Partitions | size
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -137,7 +129,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # Platforms/Hardwares
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := holi
-TARGET_BOARD_PLATFORM_GPU := adreno619
+TARGET_BOARD_PLATFORM_GPU := adreno-619
 QCOM_BOARD_PLATFORMS += $(TARGET_BOARD_PLATFORM)
 
 # Recovery
